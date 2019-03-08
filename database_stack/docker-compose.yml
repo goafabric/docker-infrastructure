@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 
 services:
   postgres:
@@ -16,6 +16,7 @@ services:
     networks:
     - database_net
     restart: always
+    mem_limit: 256M
 
   pgadmin:
     image: dpage/pgadmin4
@@ -31,6 +32,7 @@ services:
     networks:
     - database_net
     restart: always
+    mem_limit: 64M
 
 
 volumes:
