@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:9.5-alpine
+    #container_name: postgres_example_net
+    expose:
+    - "5432"
+    ports:
+    - "5432:5432"
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+    networks:
+    - development_net
+    restart: always
+
+volumes:
+    postgres_data:
+
+networks:
+  development_net:
+    driver: bridge
