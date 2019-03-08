@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  portainer:
+    image: portainer/portainer
+    ports:
+    - "9001:9000"
+    volumes:
+    - portainer_data:/data
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+    - portainer_net
+    restart: always
+
+
+volumes:
+    portainer_data:
+
+networks:
+  portainer_net:
+    driver: bridge

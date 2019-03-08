@@ -4,8 +4,8 @@ services:
   postgres:
     image: postgres:9.5-alpine
     #container_name: postgres_example_net
-    expose:
-    - "5432"
+    #expose:
+    #- "5432"
     ports:
     - "5432:5432"
     environment:
@@ -14,12 +14,29 @@ services:
     volumes:
     - postgres_data:/var/lib/postgresql/data
     networks:
-    - development_net
+    - database_net
     restart: always
+
+  pgadmin:
+    image: dpage/pgadmin4
+    #expose:
+    #  - 80
+    ports:
+      - 8000:80
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=postgres
+    - PGADMIN_DEFAULT_PASSWORD=postgres
+    volumes:
+    - pgadmin_data:/var/lib/pgadmin
+    networks:
+    - database_net
+    restart: always
+
 
 volumes:
     postgres_data:
+    pgadmin_data:
 
 networks:
-  development_net:
+  database_net:
     driver: bridge
