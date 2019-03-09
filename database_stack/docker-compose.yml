@@ -8,6 +8,7 @@ services:
     environment:
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres
+    command: postgres -c 'shared_buffers=128MB' -c 'max_connections=100' -c 'shared_preload_libraries=pg_stat_statements'
     volumes:
     - postgres_data:/var/lib/postgresql/data
     networks:
@@ -28,7 +29,6 @@ services:
     - database_net
     restart: always
     mem_limit: 64M
-
 
 volumes:
     postgres_data:
