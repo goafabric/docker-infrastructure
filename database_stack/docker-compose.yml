@@ -13,8 +13,8 @@ services:
     - postgres_data:/var/lib/postgresql/data
     networks:
     - database_net
-    restart: always
     mem_limit: 256M
+    restart: always
 
   pgadmin:
     image: dpage/pgadmin4
@@ -27,8 +27,8 @@ services:
     - pgadmin_data:/var/lib/pgadmin
     networks:
     - database_net
-    restart: always
     mem_limit: 64M
+    restart: always
 
 #  elasticsearch:
 #    image: elasticsearch:5.6
