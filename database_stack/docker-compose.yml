@@ -30,6 +30,18 @@ services:
     restart: always
     mem_limit: 64M
 
+#  elasticsearch:
+#    image: elasticsearch:5.6
+#    ports:
+#    - "9200:9200"
+#    - "9300:9300"
+#    environment:
+#    - discovery.type=single-node
+#    networks:
+#    - database_net
+#    restart: always
+#    mem_limit: 2048M
+
 volumes:
     postgres_data:
     pgadmin_data:
