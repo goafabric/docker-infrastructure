@@ -3,6 +3,7 @@ version: "2"
 services:
   postgres:
     image: postgres:9.6-alpine
+    restart: always
     ports:
     - "5432:5432"
     environment:
@@ -14,10 +15,10 @@ services:
     networks:
     - database_net
     mem_limit: 256M
-    restart: always
 
   pgadmin:
     image: dpage/pgadmin4
+    restart: always
     ports:
       - 8000:80
     environment:
@@ -28,7 +29,6 @@ services:
     networks:
     - database_net
     mem_limit: 64M
-    restart: always
 
 #  elasticsearch:
 #    image: elasticsearch:5.6
