@@ -14,6 +14,7 @@ services:
     - postgres_data:/var/lib/postgresql/data
     networks:
     - database_net
+    network_mode: bridge
     mem_limit: 256M
 
   pgadmin:
@@ -28,6 +29,7 @@ services:
     - pgadmin_data:/var/lib/pgadmin
     networks:
     - database_net
+    #network_mode: bridge
     mem_limit: 64M
 
 #  elasticsearch:
