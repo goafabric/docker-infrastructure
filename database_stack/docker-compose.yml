@@ -14,7 +14,7 @@ services:
     - postgres_data:/var/lib/postgresql/data
     networks:
     - database_net
-    network_mode: bridge
+    #network_mode: bridge
     mem_limit: 256M
 
   pgadmin:
