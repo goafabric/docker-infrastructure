@@ -17,17 +17,19 @@ services:
     #network_mode: bridge
     mem_limit: 256M
 
-#  elasticsearch:
-#    image: elasticsearch:5.6
-#    ports:
-#    - "9200:9200"
-#    - "9300:9300"
-#    environment:
-#    - discovery.type=single-node
-#    networks:
-#    - database_net
-#    restart: always
-#    mem_limit: 2048M
+  elasticsearch:
+    #image: elasticsearch:5.6.15
+    image: elasticsearch:6.6.1
+    ports:
+    - "9200:9200"
+    - "9300:9300"
+    environment:
+    - discovery.type=single-node
+#    - ES_JAVA_OPTS="-Xms1g -Xmx1g"
+    networks:
+    - database_net
+    restart: 'no'
+#    mem_limit: 1024M
 
 volumes:
     postgres_data:
