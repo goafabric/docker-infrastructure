@@ -1,7 +1,5 @@
 version: "2"
 
-COMPOSE_PROJECT_NAME=YO
-
 services:
   postgres:
     image: postgres:9.5-alpine

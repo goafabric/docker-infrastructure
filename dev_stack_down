@@ -1,10 +1,8 @@
 #portainer
-docker-compose -f portainer_stack/docker-compose.yml down
+docker-compose -p portainer_stack -f portainer_stack/docker-compose.yml down
 
 #pgadmin
-docker-compose -f pgadmin_stack/docker-compose.yml down
+docker-compose -p pgadmin_stack -f pgadmin_stack/docker-compose.yml down
 
 #dev_database
-docker-compose -f dev_database_stack/docker-compose.yml down
-
-
+docker-compose -p dev_database_stack -f dev_database_stack/docker-compose.yml down
