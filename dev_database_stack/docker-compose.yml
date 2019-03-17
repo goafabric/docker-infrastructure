@@ -17,20 +17,20 @@ services:
     #network_mode: bridge
     mem_limit: 256M
 
-  elasticsearch:
-    image: elasticsearch:5.4.3
-    restart: 'no'
-    ports:
-    - "9200:9200"
-    - "9300:9300"
-    environment:
-    - discovery.type=single-node
-    - ES_JAVA_OPTS=-Xms1g -Xmx1g
-    volumes:
-    - elasticsearch_data:/usr/share/elasticsearch/data
-    networks:
-    - database_net
-#    mem_limit: 1024M
+#  elasticsearch:
+#    image: elasticsearch:5.4.3
+#    restart: 'no'
+#    ports:
+#    - "9200:9200"
+#    - "9300:9300"
+#    environment:
+#    - discovery.type=single-node
+#    - ES_JAVA_OPTS=-Xms1g -Xmx1g
+#    volumes:
+#    - elasticsearch_data:/usr/share/elasticsearch/data
+#    networks:
+#    - database_net
+##    mem_limit: 1024M
 
 volumes:
     postgres_data:
