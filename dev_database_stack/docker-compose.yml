@@ -1,5 +1,7 @@
 version: "2"
 
+COMPOSE_PROJECT_NAME=YO
+
 services:
   postgres:
     image: postgres:9.5-alpine
@@ -9,7 +11,7 @@ services:
     environment:
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres
-    command: postgres -c 'shared_buffers=64MB' -c 'max_connections=20' -c 'shared_preload_libraries=pg_stat_statements'
+    command: postgres -c 'shared_buffers=${POSTGRES_BUFFER_SIZE}' -c 'max_connections=20' -c 'shared_preload_libraries=pg_stat_statements'
     volumes:
     - postgres_data:/var/lib/postgresql/data
     networks:
