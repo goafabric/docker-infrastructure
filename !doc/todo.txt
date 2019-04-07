@@ -1,0 +1,8 @@
+- environmnet
+- datenbank init script
+https://docs.docker.com/compose/networking/
+https://gist.github.com/onjin/2dd3cc52ef79069de1faa2dfd456c945
+
+volumes:
+  - ./schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+  - ./data.sql:/docker-entrypoint-initdb.d/2-data.sql
