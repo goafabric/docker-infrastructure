@@ -39,4 +39,4 @@ volumes:
 
 networks:
   database_net:
-    driver: bridge
+#    driver: bridge

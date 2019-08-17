@@ -19,4 +19,4 @@ volumes:
 
 networks:
   pgadmin_net:
-    driver: bridge
+#    driver: bridge

@@ -1,0 +1,2 @@
+#portainer
+docker stack rm portainer_stack
