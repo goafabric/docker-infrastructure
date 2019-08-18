@@ -1,0 +1,1 @@
+docker stack deploy -c traefik_stack/docker-compose.yml test
