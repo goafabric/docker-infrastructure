@@ -1,0 +1,4 @@
+./stack_down
+#portainer
+docker-compose -p portainer_stack -f portainer_stack/docker-compose.yml pull
+./stack_up
