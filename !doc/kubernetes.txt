@@ -37,6 +37,9 @@ minikube service spring-boot-exampleservice --url
 kubectl delete services spring-boot-exampleservice
 kubectl delete deployment spring-boot-exampleservice
 
+-- scale
+kubectl scale -n default replicaset spring-boot-exampleservice-5d9c78998f --replicas=2
+curl http://192.168.99.100:31907/actuator/info
 
 ----- Docker fix
 ~/Library/Group Containers/group.com.docker/settings.json
