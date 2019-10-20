@@ -30,8 +30,7 @@ kubectl delete services hello-world
 kubectl delete deployment hello-world
 
 -- deployment spring boot
-
-kubectl run spring-boot-exampleservice --image=goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT --port=50700 —-imagePullPolicy=Always
+kubectl apply -f spring-boot-application.yml
 kubectl expose deployment spring-boot-exampleservice --type=NodePort
 minikube service spring-boot-exampleservice --url
 
@@ -42,3 +41,6 @@ kubectl delete deployment spring-boot-exampleservice
 ----- Docker fix
 ~/Library/Group Containers/group.com.docker/settings.json
 and set the kubernetesEnabled property to false
+
+--
+kubectl run spring-boot-exampleservice --image=goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT --port=50700 —-imagePullPolicy=Always
