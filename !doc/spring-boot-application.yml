@@ -34,3 +34,11 @@ spec:
             - containerPort: 50700
               protocol: TCP
           imagePullPolicy: Always
+#          args:
+#            - /server
+#            livenessProbe:
+#              httpGet:
+#                path: /actuator/health
+#                port: 50700
+#              initialDelaySeconds: 20
+#              periodSeconds: 1
