@@ -33,3 +33,4 @@ spec:
           ports:
             - containerPort: 50700
               protocol: TCP
+          imagePullPolicy: Always
