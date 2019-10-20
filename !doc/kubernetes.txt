@@ -29,7 +29,14 @@ minikube service hello-world --url
 kubectl delete services hello-world
 kubectl delete deployment hello-world
 
+-- deployment spring boot
 
+kubectl run spring-boot-exampleservice --image=goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT --port=50700
+kubectl expose deployment spring-boot-exampleservice --type=NodePort
+minikube service spring-boot-exampleservice --url
+
+kubectl delete services spring-boot-exampleservice
+kubectl delete deployment spring-boot-exampleservice
 
 
 
