@@ -1,5 +1,58 @@
 Kubernetes
 
+
+--- general
+
+minikube start
+minikube dashboard
+
+kubectl get deployments
+kubectl get pods
+
+
+-- deployment hello-world
+
+kubectl run hello-world --image=gcr.io/google-samples/node-hello:1.0 --port=8080
+kubectl expose deployment hello-world --type=NodePort
+minikube service hello-world --url
+
+kubectl delete services hello-world
+kubectl delete deployment hello-world
+
+-- deployment file hello-world
+
+kubectl apply -f hello-application.yml
+kubectl expose deployment hello-world --type=NodePort
+
+kubectl delete services hello-world
+kubectl delete deployment hello-world
+
+
+
+
+
+
+
+
+
+
+
+
+-- deployment hello-minikube
+
+kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
+kubectl expose deployment hello-minikube --type=NodePort
+minikube service hello-minikube --url
+
+kubectl delete services hello-minikube
+kubectl delete deployment hello-minikube
+
+
+
+
+
+
+
 —— comands
 kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
 kubectl expose deployment hello-minikube --type=NodePort
