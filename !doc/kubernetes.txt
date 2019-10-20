@@ -31,57 +31,13 @@ kubectl delete deployment hello-world
 
 -- deployment spring boot
 
-kubectl run spring-boot-exampleservice --image=goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT --port=50700
+kubectl run spring-boot-exampleservice --image=goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT --port=50700 —-imagePullPolicy=Always
 kubectl expose deployment spring-boot-exampleservice --type=NodePort
 minikube service spring-boot-exampleservice --url
 
 kubectl delete services spring-boot-exampleservice
 kubectl delete deployment spring-boot-exampleservice
 
-
-
-
-
-
-
-
-
--- deployment hello-minikube
-
-kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
-kubectl expose deployment hello-minikube --type=NodePort
-minikube service hello-minikube --url
-
-kubectl delete services hello-minikube
-kubectl delete deployment hello-minikube
-
-
-
-
-
-
-
-—— comands
-kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
-kubectl expose deployment hello-minikube --type=NodePort
-
-kubectl delete services hello-minikube
-kubectl delete deployment hello-minikube
-kubectl get deployments
-kubectl get pod
-minikube service hello-minikube --url
-----
-kubectl run spring-boot-exampleservice --image=goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT —port 50700 —imagePullPolicy=Always
-kubectl expose deployment spring-boot-exampleservice --type=NodePort
-
-kubectl delete service spring-boot-exampleservice
-kubectl delete deployment spring-boot-exampleservice
-—------
-kubectl run skillz --image=goafabric/skillz:1.0.0-SNAPSHOT —port 8080
-kubectl expose deployment skillz --type=NodePort
-
-kubectl delete service skillz
-kubectl delete deployment skillz
 
 ----- Docker fix
 ~/Library/Group Containers/group.com.docker/settings.json
