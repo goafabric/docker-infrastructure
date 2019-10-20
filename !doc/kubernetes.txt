@@ -22,11 +22,10 @@ kubectl delete deployment hello-world
 -- deployment file hello-world
 
 kubectl apply -f hello-application.yml
-kubectl expose deployment hello-world --type=NodePort
+kubectl apply -f hello-service.yml
 
 kubectl delete services hello-world
 kubectl delete deployment hello-world
-
 
 
 

@@ -6,7 +6,7 @@
     selector:
       matchLabels:
         run: load-balancer-example
-    replicas: 1
+    replicas: 2
     template:
       metadata:
         labels:
@@ -18,4 +18,3 @@
             ports:
               - containerPort: 8080
                 protocol: TCP
-
