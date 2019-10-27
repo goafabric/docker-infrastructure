@@ -19,7 +19,7 @@ spec:
   selector:
     matchLabels:
       app: spring-boot-exampleservice
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:

@@ -15,3 +15,8 @@ minikube service spring-boot-exampleservice --url
 -- delete
 kubectl delete services spring-boot-exampleservice
 kubectl delete deployment spring-boot-exampleservice
+
+-- scale
+kubectl get replicasets
+kubectl scale -n default replicaset spring-boot-exampleservice-854b86dd8 --replicas=2
+curl http://192.168.99.100:30001/actuator/info
