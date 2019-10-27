@@ -1,0 +1,33 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-frontend
+spec:
+  selector:
+    app: demo-frontend
+  ports:
+    - protocol: TCP
+      port: 50700
+      nodePort: 30001
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-frontend
+spec:
+  selector:
+    matchLabels:
+      app: demo-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo-frontend
+    spec:
+      containers:
+        - name: spring-boot-exampleservice
+          image: goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 50700
