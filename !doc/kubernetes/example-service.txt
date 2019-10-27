@@ -15,6 +15,8 @@ minikube service spring-boot-exampleservice --url
 -- delete
 kubectl delete services spring-boot-exampleservice
 kubectl delete deployment spring-boot-exampleservice
+kubectl delete services app-postgres
+kubectl delete deployment app-postgres
 
 -- scale
 kubectl get replicasets

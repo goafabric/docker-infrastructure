@@ -33,11 +33,14 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 50700
+          env:
+            - name: spring.datasource.url
+              value: "jdbc:postgresql://app-postgres:5432/countrydb"
           readinessProbe:
             httpGet:
               path: /actuator/health
               port: 50700
-            initialDelaySeconds: 60 #takes 20 seconds per pod on my machine
+            initialDelaySeconds: 30 #takes 20 seconds per pod on my machine
             periodSeconds: 5
             timeoutSeconds: 2
             failureThreshold: 3
@@ -49,3 +52,51 @@ spec:
             periodSeconds: 5
             timeoutSeconds: 2
             failureThreshold: 3
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-postgres
+spec:
+  selector:
+    app: app-postgres
+  ports:
+    - protocol: TCP
+      port: 5432
+  type: ClusterIP
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-postgres
+spec:
+  selector:
+    matchLabels:
+      app: app-postgres
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app-postgres
+    spec:
+      containers:
+        - name: app-postgres
+          image: postgres:9.5-alpine
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+            - name: POSTGRES_DB
+              value: "countrydb"
+
+
+
