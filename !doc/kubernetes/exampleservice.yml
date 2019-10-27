@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: demo-frontend
+  name: spring-boot-exampleservice
 spec:
   selector:
-    app: demo-frontend
+    app: spring-boot-exampleservice
   ports:
     - protocol: TCP
       port: 50700
@@ -14,16 +14,16 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-frontend
+  name: spring-boot-exampleservice
 spec:
   selector:
     matchLabels:
-      app: demo-frontend
+      app: spring-boot-exampleservice
   replicas: 1
   template:
     metadata:
       labels:
-        app: demo-frontend
+        app: spring-boot-exampleservice
     spec:
       containers:
         - name: spring-boot-exampleservice
