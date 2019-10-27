@@ -1,31 +1,31 @@
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  name: hello-world
-#spec:
-#  selector:
-#    app: hello-world
-#  ports:
-#    - protocol: TCP
-#      port: 8080
-##      nodePort: 30001
-#  type: NodePort
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-exampleservice
+spec:
+  selector:
+    app: spring-boot-exampleservice
+  ports:
+    - protocol: TCP
+      port: 50700
+      nodePort: 30001
+  type: NodePort
 
 ---
 
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: spring-boot-exampleservice
 spec:
   selector:
     matchLabels:
-      run: load-balancer-example
+      run: spring-boot-exampleservice
   replicas: 1
   template:
     metadata:
       labels:
-        run: load-balancer-example
+        run: spring-boot-exampleservice
     spec:
       containers:
         - name: spring-boot-exampleservice
