@@ -19,3 +19,8 @@ kubectl delete deployment spring-boot-exampleservice
 -- scale
 kubectl get replicasets
 curl http://192.168.99.100:30100/actuator/info
+
+-- general
+kubectl get pods
+kubectl describe pods
+kubectl get deployments
