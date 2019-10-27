@@ -8,7 +8,7 @@ spec:
   ports:
     - protocol: TCP
       port: 50700
-      nodePort: 30100
+      nodePort: 30100 #this is the external port
   type: NodePort
 
 ---
@@ -33,3 +33,11 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 50700
+#          args:
+#            - /server
+#            livenessProbe:
+#              httpGet:
+#                path: /actuator/health
+#                port: 50700
+#              initialDelaySeconds: 20
+#              periodSeconds: 1
