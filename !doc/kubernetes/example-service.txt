@@ -18,5 +18,5 @@ kubectl delete deployment spring-boot-exampleservice
 
 -- scale
 kubectl get replicasets
-kubectl scale -n default replicaset spring-boot-exampleservice-854b86dd8 --replicas=2
+kubectl scale -n default replicaset spring-boot-exampleservice-74845f7bcf --replicas=2
 curl http://192.168.99.100:30001/actuator/info
