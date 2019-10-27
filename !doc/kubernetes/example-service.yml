@@ -33,11 +33,19 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 50700
-#          args:
-#            - /server
-#            livenessProbe:
-#              httpGet:
-#                path: /actuator/health
-#                port: 50700
-#              initialDelaySeconds: 20
-#              periodSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 50700
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 50700
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
