@@ -9,8 +9,7 @@ kubectl expose deployment spring-boot-exampleservice --type=NodePort
 minikube service spring-boot-exampleservice --url
 
 -- deployment spring boot with file
-kubectl apply -f exampleservice.yml
-#kubectl expose deployment spring-boot-exampleservice --type=NodePort
+kubectl apply -f example-service.yml
 minikube service spring-boot-exampleservice --url
 
 -- delete
