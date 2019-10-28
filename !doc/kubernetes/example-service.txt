@@ -1,5 +1,5 @@
 -- init
-minikube start
+minikube start --vm-driver="virtualbox"
 minikube dashboard
 
 -- deployment barebone
