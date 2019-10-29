@@ -27,6 +27,12 @@ spec:
       labels:
         app: spring-boot-exampleservice
     spec:
+      initContainers:
+        - name: check-db-ready
+          image: postgres:9.5-alpine
+          command: ['sh', '-c',
+                    'until pg_isready -h app-postgres -p 5432;
+                     do echo waiting for database; sleep 2; done;']
       containers:
         - name: spring-boot-exampleservice
           image: goafabric/spring-boot-exampleservice:1.0.0-SNAPSHOT
