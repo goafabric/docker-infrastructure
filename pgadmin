@@ -1,4 +1,4 @@
 #!/bin/bash
-export STACK_NAME="portainer_stack"
+export STACK_NAME="pgadmin_stack"
 
 ./stack_util ${STACK_NAME} $1
