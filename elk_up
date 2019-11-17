@@ -1,0 +1,3 @@
+#elk
+docker-compose -p elk_stack -f elk_stack/docker-compose.yml up --build -d
+
