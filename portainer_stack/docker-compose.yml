@@ -6,7 +6,7 @@ services:
     ports:
     - "9000:9000"
     restart: always
-    command: --no-auth
+#    command: --no-auth
     volumes:
     - portainer_data:/data
     - /var/run/docker.sock:/var/run/docker.sock
