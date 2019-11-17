@@ -17,8 +17,11 @@ elif [ "${COMMAND}" = "pull" ]
 then
     func_compose down
     func_compose pull
+elif [ "${COMMAND}" = "prune" ]
+then
+    func_compose down --volumes
 else
-    echo Doing nothing   !
+    echo Doing nothing !
 fi
 
 #CleanUp: docker volume prune
