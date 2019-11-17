@@ -1,8 +1,8 @@
 #portainer
-docker-compose -p portainer_stack -f portainer_stack/docker-compose.yml up -d
+#docker-compose -p portainer_stack -f portainer_stack/docker-compose.yml up -d
 
 #pgadmin
 #docker-compose -p pgadmin_stack -f pgadmin_stack/docker-compose.yml up -d
 
 #dev_database
-#docker-compose -p dev_database_stack -f dev_database_stack/docker-compose.yml up -d
+docker-compose -p dev_database_stack -f dev_database_stack/docker-compose.yml up -d

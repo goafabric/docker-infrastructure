@@ -13,10 +13,9 @@ services:
     command: postgres -c 'shared_buffers=64MB' -c 'max_connections=20' -c 'shared_preload_libraries=pg_stat_statements'
     volumes:
     - postgres_data:/var/lib/postgresql/data
+    - ./initdb/00_pg_statements.sql:/docker-entrypoint-initdb.d/00_pg_statements.sql
     networks:
     - database_net
-    #network_mode: bridge
-#    mem_limit: 256M
 
 #  elasticsearch:
 #    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
@@ -35,7 +34,7 @@ services:
 
 volumes:
     postgres_data:
-    elasticsearch_data:
+#    elasticsearch_data:
 
 networks:
   database_net:
