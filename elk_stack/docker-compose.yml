@@ -1,10 +1,5 @@
 version: '3.2'
 services:
-#  demo:
-#    # run `./mvnw clean package` before
-#    build: ./demo
-#    ports:
-#      - 8080:8080
   filebeat:
     build: ./filebeat
     volumes:
