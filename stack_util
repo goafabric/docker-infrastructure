@@ -17,6 +17,9 @@ elif [ "${COMMAND}" = "pull" ]
 then
     func_compose down
     func_compose pull
+elif [ "${COMMAND}" = "build" ]
+then
+    func_compose build
 elif [ "${COMMAND}" = "prune" ]
 then
     func_compose down --volumes
