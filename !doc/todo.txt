@@ -1,5 +1,1 @@
-startup script
 env
-portainer
-
-postgres update
