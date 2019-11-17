@@ -1,6 +1,4 @@
 #!/bin/bash
-echo yo
-
 export STACK_NAME="portainer_stack"
 export COMMAND=$1
 
@@ -12,14 +10,15 @@ function func_compose {
 if [ "${COMMAND}" = "up" ]
 then
     func_compose up -d
-fi
-
-if [ "${COMMAND}" = "down" ]
+elif [ "${COMMAND}" = "down" ]
 then
     func_compose down
+elif [ "${COMMAND}" = "pull" ]
+then
+    func_compose down
+    func_compose pull
+else
+    echo Doing nothing   !
 fi
 
-if [ "${COMMAND}" = "down" ]
-then
-    func_compose pull
-fi
+#CleanUp: docker volume prune
