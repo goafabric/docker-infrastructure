@@ -3,7 +3,6 @@ export STACK_NAME="elk_stack"
 
 if [ "${1}" = "up" ]
 then
-    echo yo build
     ./stack_util ${STACK_NAME} build
 fi
 
