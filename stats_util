@@ -1,0 +1,7 @@
+#!/bin/bash
+while true
+do
+    echo "Time: $(date)" >> docker_stats.txt
+    docker stats --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}" >> docker_stats.txt
+    sleep 5
+done
