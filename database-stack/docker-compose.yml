@@ -15,7 +15,7 @@ services:
     - postgres_data:/var/lib/postgresql/data
     - ./initdb/00_pg_statements.sql:/docker-entrypoint-initdb.d/00_pg_statements.sql
     networks:
-    - database_net
+    - database-net
 
 #  elasticsearch:
 #    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
@@ -29,7 +29,7 @@ services:
 #    volumes:
 #    - elasticsearch_data:/usr/share/elasticsearch/data
 #    networks:
-#    - database_net
+#    - database-net
 ##    mem_limit: 1024M
 
 volumes:
@@ -37,5 +37,5 @@ volumes:
 #    elasticsearch_data:
 
 networks:
-  database_net:
+  database-net:
 #    driver: bridge

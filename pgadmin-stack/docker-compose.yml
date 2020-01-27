@@ -12,11 +12,11 @@ services:
     volumes:
     - pgadmin_data:/var/lib/pgadmin
     networks:
-    - pgadmin_net
+    - pgadmin-net
 
 volumes:
     pgadmin_data:
 
 networks:
-  pgadmin_net:
+  pgadmin-net:
 #    driver: bridge
