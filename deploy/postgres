@@ -1,4 +1,4 @@
 #!/bin/bash
-export STACK_NAME="database-stack"
+export STACK_NAME="postgres-stack"
 
 ./stack_util ${STACK_NAME} $1
