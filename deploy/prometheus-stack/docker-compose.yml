@@ -50,10 +50,10 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - /var/docker/data/monitoring/grafana:/var/lib/grafana
+#      - /var/docker/data/monitoring/grafana:/var/lib/grafana
     ports:
-      - 3000:3000
-    user: "1000" # USER ID des Docker Users anpassen
+      - "3000:3000"
+#    user: "1000" # USER ID des Docker Users anpassen
     depends_on:
       - mon_prometheus
     networks:
